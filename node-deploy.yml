@@ -1,0 +1,30 @@
+apiVersion: apps/v1 # กำหนด version ของ api ที่ใช้ในการสร้าง deployment
+kind: Deployment # กำหนดประเภทของ object ที่จะสร้างขึ้นมา
+metadata: # ข้อมูลของ deployment นี้
+  name: node-deployment # ชื่อ deployment
+  labels:
+    app: node-app
+spec: # กำหนดค่าการทำงานของ deployment นี้
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-app
+  template: # กำหนด template ของ pod ที่จะสร้างขึ้นมา
+    metadata:
+      labels:
+        app: node-app
+    spec: # กำหนดค่าการทำงานของ pod ที่จะสร้างขึ้นมา 
+      containers:
+      - name: node-app
+        image: nisibz/node-app:1.0.0
+        ports:
+        - containerPort: 3000
+# ไฟล์นี้เป็นไฟล์ deployment โดยจะมี step การทำงานดังนี้
+
+# - ทำการสร้าง deployment
+# - deployment จะไปทำการสร้าง replica 
+# - replicaset สร้าง pod 
+
+
+# วิธีการรันไฟล์ kubectl apply -f node-deploy.yml
+# หากต้องการอัพเดทสามารถใช้คำสั่ง kubectl apply -f node-deploy.yml ได้เลย
