@@ -1,3 +1,4 @@
+const packageJson = require("../package.json");
 const express = require("express");
 const Docker = require("dockerode");
 const docker = new Docker();
@@ -9,7 +10,8 @@ let counter = 0;
 
 app.get("/version", (req, res) => {
   counter++;
-  res.send(`Version 1.0.1 - ${counter}`);
+  console.log(`Counter: ${counter}`);
+  res.send(`Version ${packageJson.version} - ${counter}`);
 });
 
 app.get("/container-id", async (req, res) => {

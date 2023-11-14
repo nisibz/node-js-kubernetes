@@ -16,7 +16,7 @@ spec: # กำหนดค่าการทำงานของ deployment น
     spec: # กำหนดค่าการทำงานของ pod ที่จะสร้างขึ้นมา 
       containers:
       - name: node-app
-        image: nisibz/node-app:1.0.1
+        image: nisibz/node-app:1.0.2
         ports:
         - containerPort: 3000
 # ไฟล์นี้เป็นไฟล์ deployment โดยจะมี step การทำงานดังนี้

@@ -1,6 +1,6 @@
 
 # Use an official Node.js runtime as a parent image
-FROM node:14-alpine
+FROM node:18-alpine
 
 # Set the working directory to /app
 WORKDIR /app
@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the rest of the application code to the working directory
-COPY . .
+COPY ./src ./src
 
 # Expose port 3000
 EXPOSE 3000
