@@ -33,3 +33,7 @@ This project is to learn how to use Kubernetes using Node.js. It provides detail
 - `node-deployment.yml`: File defining the deployment of Node.js through Kubernetes
 - `node-service.yml`: File defining the service for Node.js through Kubernetes
 - `nginx-ingress.yml`: File defining the Ingress for Node.js in Kubernetes
+
+## Architecture
+
+![alt text](./node-app-diagram.png)
